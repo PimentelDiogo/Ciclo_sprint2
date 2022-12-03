@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
+import 'package:get_it/get_it.dart';
 import '../../model/list_model.dart';
 import '../controller/list_controller.dart';
 import '../widget/list_item.dart';
@@ -13,17 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final controller = TodoController();
-
-  // @override
-  // void initState(){
-  //   super.initState();
-  //   controller.todoRepository.getTodoList().then((value){
-  //     setState(() {
-  //       controller.todos = value;
-  //     });
-  //   });
-  // }
+  final controller = GetIt.instance.get<TodoController>();
 
   @override
   Widget build(BuildContext context) {
